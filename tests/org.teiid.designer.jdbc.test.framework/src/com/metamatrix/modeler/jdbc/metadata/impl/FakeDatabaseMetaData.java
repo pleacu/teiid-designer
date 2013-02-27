@@ -11,6 +11,7 @@ import java.sql.Connection;
 import java.sql.DatabaseMetaData;
 import java.sql.ResultSet;
 import java.sql.RowIdLifetime;
+import java.sql.SQLException;
 
 /**
  * FakeDatabaseMetaData
@@ -1303,6 +1304,17 @@ public class FakeDatabaseMetaData implements DatabaseMetaData {
     public <T> T unwrap( Class<T> iface ) {
 
         return null;
+    }
+    
+    public ResultSet getPseudoColumns(String catalog,
+                                      String schemaPattern,
+                                      String tableNamePattern,
+                                      String columnNamePattern) throws SQLException {
+        return null;
+    }
+
+    public boolean generatedKeyAlwaysReturned() throws SQLException {
+        return false;
     }
 
 }

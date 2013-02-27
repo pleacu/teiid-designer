@@ -15,6 +15,7 @@ import java.sql.Connection;
 import java.sql.DatabaseMetaData;
 import java.sql.NClob;
 import java.sql.PreparedStatement;
+import java.sql.SQLException;
 import java.sql.SQLWarning;
 import java.sql.SQLXML;
 import java.sql.Savepoint;
@@ -22,6 +23,7 @@ import java.sql.Statement;
 import java.sql.Struct;
 import java.util.Map;
 import java.util.Properties;
+import java.util.concurrent.Executor;
 
 /**
  * FakeConnection
@@ -536,5 +538,22 @@ public class FakeConnection implements Connection {
     @Override
     public <T> T unwrap( Class<T> iface ) {
         return null;
+    }
+
+    public void setSchema(String schema) throws SQLException {
+    }
+
+    public String getSchema() throws SQLException {
+        return null;
+    }
+
+    public void abort(Executor executor) throws SQLException {
+    }
+
+    public void setNetworkTimeout(Executor executor, int milliseconds) throws SQLException {
+    }
+
+    public int getNetworkTimeout() throws SQLException {
+        return 0;
     }
 }
