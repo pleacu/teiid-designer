@@ -27,6 +27,7 @@
       <plugin>
         <groupId>org.jboss.tools.tycho-plugins</groupId>
         <artifactId>repository-utils</artifactId>
+	<version>0.21.1</version>
         <executions>
           <execution>
             <id>generate-facade</id>
@@ -35,7 +36,8 @@
               <goal>generate-repository-facade</goal>
             </goals>
             <configuration>
-              <associateSites>
+              <referenceStrategy>compositeReferences</referenceStrategy>
+	      <associateSites>
 		<associateSite>http://download.jboss.org/jbosstools/updates/development/luna/</associateSite>
 		<associateSite>http://download.jboss.org/jbosstools/targetplatforms/jbtistarget/luna/</associateSite>
               </associateSites>
